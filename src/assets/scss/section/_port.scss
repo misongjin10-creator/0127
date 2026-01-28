@@ -1,0 +1,91 @@
+#port{
+    width: 100%;
+    margin-top: 30vh;
+
+    .port_inner{
+        padding: 16px;
+
+        .port_title{
+            // background-color: lightpink;
+            height: 5vw;
+            font-size: 4vw;
+            font-family: var(--mainEng-font);
+            font-weight: 700;
+            text-transform: capitalize;
+            border-bottom: 0.4vw solid var(--black100);
+            margin-bottom: 16px;
+
+            em{
+                font-size: 1.25rem;
+                font-weight: 500;
+                font-family: var(--mainNum-font);
+                vertical-align: 3px;
+            }
+        }
+        .port_wrap{
+            width: 4000px;
+            display: flex;
+            flex-wrap: wrap;/*위에 넓이값을 그대로 유지,모자르면 아래로 떨어지는 명령어*/
+            height: 70vh;
+
+            .port_item{
+                width: 500px;
+                background-color: var(--subBg100);
+                padding: 2.5rem;
+                margin-right: 20px;
+
+                &.p1{background-color: var(--subBg100);}
+                &.p2{background-color: var(--subBg200);}
+                &.p3{background-color: var(--subBg300);}
+                &.p4{background-color: var(--subBg400);}
+                &.p5{background-color: var(--subBg500);}
+                &.p6{background-color: var(--subBg600);}
+
+                .num{
+                    font-size: 32px;
+                    font-family: var(--mainNum-font);
+                    font-weight: 500;
+                }
+                .img{/*a테그*/
+                    display: block;
+                    margin-top: -20px;
+                    transition: margin-top 0.3s;
+
+                    img{filter: saturate(0%); 
+                        border-radius: 10px;
+                        transition: all o,3s;
+                    }
+                    &:hover{
+                        margin-top: 0;
+                        img{filter: saturate(100%);}
+                    }
+                }
+                .title{
+                    font-size: 1.5rem;
+                    padding: 12px 0;
+                    font-weight: 600;
+                    font-family: var(--mainEng-font);
+                    border-bottom: 2px solid var(--black100);
+                    text-align: center;
+                }
+                .desc{
+                    text-align: justify;
+                    padding: 1rem 0;
+
+                }
+                .site{
+                    border: 1px solid var(--black100);
+                    display: block;
+                    text-align: center;
+                    margin-top: 20px;
+                    padding: 10px 0;
+
+                    &:hover{
+                        background-color: rgba(0,0,0,0.3);
+                        color:var(--white);
+                    }
+                }
+            }
+        }
+    }
+}

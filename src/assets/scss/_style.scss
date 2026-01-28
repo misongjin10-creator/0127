@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+//setting
+@import "./setting/resct";
+@import "./setting/vars";
+@import "./setting/font";
+@import "./setting/mixin"; 
+
+//section
+@import "./section/skip";
+@import "./section/header";
+@import "./section/intro";
+@import "./section/skill";
+@import "./section/site";
+@import "./section/port";

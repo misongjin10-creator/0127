@@ -1,0 +1,91 @@
+#site{
+
+    .site_inner{
+        padding: 16px;
+
+    .site_title{
+        position: sticky;/*위에 고정*/
+        left: 0;
+        top: 70px;
+        width: 70%;
+        height: 5vw;
+        // background-color: lightpink;
+        font-size: 4vw;
+        font-weight: 700;
+        border-bottom: 0.4vw solid var(--black100);
+        margin-bottom: 100px;
+
+        em{
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+    }
+    .site_wrap{
+
+        .site_item{
+            position: sticky;
+            left: 0;
+            height: 70vh;
+            @include flex-center;
+            text-align: center;
+            flex-direction: column;/*세로로 보내는거*/
+
+            &.s1{background-color: var(--subBg100); top: 180px;}
+            &.s2{background-color: var(--subBg200); top: 200px;}
+            &.s3{background-color: var(--subBg300); top: 220px;}
+            &.s4{background-color: var(--subBg400); top: 240px;}
+            .num{
+                position: absolute;
+                left: 1vw;
+                top: 1vw;
+                font-size: 5vw;
+            }
+            .text{margin-bottom: 1rem;
+                    >div{
+                        font-size: 3vw;
+                        line-height: 1.2;
+                        text-transform: uppercase;
+                        font-family: var(--mainEng-font);
+                        text-decoration: underline;
+                        font-weight: 600;
+                    }
+            }
+            .title{
+                font-weight: 500;
+                font-family: var(--mainEng-font);
+            }
+            .btn{
+
+                >a{
+                    text-decoration: underline;
+                    margin: 0 3px;
+                    font-size: 1.1rem;
+                    transition: all 0.3s;
+                    
+                    &:hover{
+                        color: yellow;
+                    }
+                }
+            }
+            .infor{
+                position: absolute;
+                left: 0;
+                bottom: 3%;
+                display: flex;
+                width: 98%;
+                margin-left: 1%;
+                justify-content: space-between;
+                padding: 0 2%;
+                border-top: 1px solid var(--black100);
+                border-bottom: 1px solid var(--black100);
+
+                >span{}
+            }
+
+        }
+
+    }
+    }
+    
+    
+}

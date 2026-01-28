@@ -1,0 +1,120 @@
+#header{
+    @include position-fixed;
+    z-index: 1000;
+
+    .header_inner{
+        @include flex-between;
+            background-color: rgba(116,99,99,0.1);
+            padding: 1rem;
+            backdrop-filter: blur(15px);/*뒷부분 안보이게 하는것*/
+        .header_logo{
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1;
+
+            em{
+                display: block;/*다음줄로 내리는것*/
+                font-size: 12px;
+                }
+        }
+        .header_nav{
+
+            @media(max-width:800px) {
+                display: none;
+
+                &.show{
+                    display: block;
+                    ul{
+                        position: absolute;
+                        right: 16px;
+                        top: 68px;
+                        background-color: rgba(182,182,182,0.8);
+                        
+                        li{
+                            display: block;
+                            a{
+                                display: block;
+                                padding: 10px 25px;
+
+                            }
+                        }
+                    }
+                }
+                /* + 는 형제를 찾을떄 사용*/
+                &.show + .header_nav_mobile span::before{
+                    width: 20px;
+                }
+                &.show + .header_nav_mobile span::after{
+                    width: 20px;
+                }
+            }
+
+            ul{
+                li{
+                    display: inline;/*메뉴를 한줄로*/
+                    a{
+                        padding: 14px;/*메뉴들을 사이간격을 떨어뜨린다*/
+                        position: relative;
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: 5px;
+                            width: 100%;
+                            height: 1px;
+                            background-color: var(--black);
+                            transform: scaleX(0);
+                            transition: 0.3s;/*가상요소의 속도값*/
+                        }
+                        &:hover::before{
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+        .header_nav_mobile{
+            display: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            // background-color: lightpink;
+            @media(max-width:800px) {
+                display: block;
+            
+            }
+
+            span{
+                display: block;
+                width: 40px;
+                height: 2px;
+                background-color: var(--black);
+                margin-top: 19px;
+                position: relative;
+
+                &::before{
+                    content: "";
+                    width: 40px;
+                    height: 2px;
+                    background-color: var(--black);
+                    position: absolute;
+                    right: 0;
+                    top: 6px;
+                    transition: all 0.3s;
+                }
+                &::after{
+                    content: "";
+                    width: 40px;
+                    height: 2px;
+                    background-color: var(--black);
+                    position: absolute;
+                    left: 0;
+                    bottom: 6px;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
+}
